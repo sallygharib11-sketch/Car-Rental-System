@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane
+    minWidth="700.0"
+    minHeight="500.0"
+    prefWidth="1100.0"
+    prefHeight="700.0"
+    xmlns="http://javafx.com/javafx/25"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="controllers.CarViewController">
+
+    <!-- ========================================================= -->
+    <!-- TOP NAVIGATION BAR -->
+    <!-- ========================================================= -->
+
+    <top>
+
+        <HBox
+            alignment="CENTER_LEFT"
+            minHeight="70.0"
+            prefHeight="70.0"
+            spacing="15.0"
+            style="-fx-background-color: #2F3438;
+                   -fx-padding: 0 25 0 25;">
+
+            <children>
+
+                <!-- BRAND -->
+
+                <VBox
+                    alignment="CENTER_LEFT"
+                    spacing="2.0">
+
+                    <children>
+
+                        <Label
+                            text="PDR CAR RENTAL"
+                            textFill="WHITE">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="20.0" />
+                            </font>
+
+                        </Label>
+
+                        <Label
+                            text="CAR MANAGEMENT"
+                            textFill="#BFC3C7">
+
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+
+                        </Label>
+
+                    </children>
+
+                </VBox>
+
+
+                <!-- FLEXIBLE SPACE -->
+
+                <Region
+                    HBox.hgrow="ALWAYS" />
+
+
+                <!-- DASHBOARD MENU -->
+
+                <MenuButton
+                    fx:id="btnDashboard"
+                    mnemonicParsing="false"
+                    text="Dashboard"
+                    prefHeight="42.0"
+                    style="-fx-background-color: #555B60;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;
+                           -fx-background-radius: 8;
+                           -fx-cursor: hand;
+                           -fx-padding: 0 18 0 18;">
+
+                    <font>
+                        <Font
+                            name="System Bold"
+                            size="14.0" />
+                    </font>
+
+                    <items>
+
+                        <MenuItem
+                            mnemonicParsing="false"
+                            text="Customers"
+                            onAction="#openCustomers" />
+
+                        <MenuItem
+                            mnemonicParsing="false"
+                            text="Payments"
+                            onAction="#openPayments" />
+
+                        <MenuItem
+                            mnemonicParsing="false"
+                            text="Cars"
+                            onAction="#openCars" />
+
+                        <MenuItem
+                            mnemonicParsing="false"
+                            text="Employees"
+                            onAction="#openEmployees" />
+
+                        <MenuItem
+                            mnemonicParsing="false"
+                            text="Rentals"
+                            onAction="#openRentals" />
+
+                    </items>
+
+                </MenuButton>
+
+            </children>
+
+        </HBox>
+
+    </top>
+
+
+    <!-- ========================================================= -->
+    <!-- CENTER -->
+    <!-- ========================================================= -->
+
+    <center>
+
+        <VBox
+            spacing="22.0"
+            fillWidth="true"
+            style="-fx-background-color: linear-gradient(to bottom right, #F5F5F5, #D9DDE1);
+                   -fx-padding: 30 35 35 35;">
+
+            <children>
+
+                <!-- ================================================= -->
+                <!-- PAGE HEADER -->
+                <!-- ================================================= -->
+
+                <VBox
+                    spacing="5.0">
+
+                    <children>
+
+                        <Label
+                            text="Car Management"
+                            textFill="#303438">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="30.0" />
+                            </font>
+
+                        </Label>
+
+                        <Label
+                            text="Manage vehicles, pricing and availability"
+                            textFill="#777D83">
+
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+
+                        </Label>
+
+                    </children>
+
+                </VBox>
+
+
+                <!-- ================================================= -->
+                <!-- SEARCH + ACTION BAR -->
+                <!-- ================================================= -->
+
+                <HBox
+                    alignment="CENTER_LEFT"
+                    spacing="12.0"
+                    fillHeight="true">
+
+                    <children>
+
+                        <!-- SEARCH -->
+
+                        <TextField
+                            fx:id="txtSearch"
+                            promptText="Search by number, brand, model or status..."
+                            prefHeight="44.0"
+                            minWidth="180.0"
+                            HBox.hgrow="ALWAYS"
+                            style="-fx-background-color: white;
+                                   -fx-border-color: #C1C5C9;
+                                   -fx-border-width: 1;
+                                   -fx-border-radius: 9;
+                                   -fx-background-radius: 9;
+                                   -fx-padding: 0 15 0 15;
+                                   -fx-text-fill: #303438;
+                                   -fx-prompt-text-fill: #999EA3;
+                                   -fx-font-size: 14px;" />
+
+
+                        <!-- ADD -->
+
+                        <Button
+                            fx:id="btnAdd"
+                            mnemonicParsing="false"
+                            onAction="#handleAdd"
+                            text="＋  Add Car"
+                            prefHeight="44.0"
+                            prefWidth="125.0"
+                            style="-fx-background-color: #4F7A5A;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 9;
+                                   -fx-cursor: hand;">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="13.0" />
+                            </font>
+
+                        </Button>
+
+
+                        <!-- UPDATE -->
+
+                        <Button
+                            fx:id="btnEdit"
+                            mnemonicParsing="false"
+                            onAction="#handleUpdate"
+                            text="Update"
+                            prefHeight="44.0"
+                            prefWidth="105.0"
+                            style="-fx-background-color: #FFFFFF;
+                                   -fx-text-fill: #444A4F;
+                                   -fx-font-weight: bold;
+                                   -fx-border-color: #C1C5C9;
+                                   -fx-border-width: 1;
+                                   -fx-border-radius: 9;
+                                   -fx-background-radius: 9;
+                                   -fx-cursor: hand;">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="13.0" />
+                            </font>
+
+                        </Button>
+
+
+                        <!-- DELETE -->
+
+                        <Button
+                            fx:id="btnDelete"
+                            mnemonicParsing="false"
+                            onAction="#handleDelete"
+                            text="Delete"
+                            prefHeight="44.0"
+                            prefWidth="105.0"
+                            style="-fx-background-color: #B94A48;
+                                   -fx-text-fill: white;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 9;
+                                   -fx-cursor: hand;">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="13.0" />
+                            </font>
+
+                        </Button>
+
+                    </children>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- TABLE CONTAINER -->
+                <!-- ================================================= -->
+
+                <VBox
+                    VBox.vgrow="ALWAYS"
+                    style="-fx-background-color: white;
+                           -fx-background-radius: 14;
+                           -fx-border-color: #C6C9CC;
+                           -fx-border-width: 1;
+                           -fx-border-radius: 14;
+                           -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 12, 0.1, 0, 4);">
+
+                    <children>
+
+                        <!-- TABLE HEADER -->
+
+                        <HBox
+                            alignment="CENTER_LEFT"
+                            minHeight="52.0"
+                            spacing="10.0"
+                            style="-fx-padding: 0 18 0 18;
+                                   -fx-background-color: #ECEEEF;
+                                   -fx-background-radius: 14 14 0 0;">
+
+                            <children>
+
+                                <Label
+                                    text="VEHICLE LIST"
+                                    textFill="#444A4F">
+
+                                    <font>
+                                        <Font
+                                            name="System Bold"
+                                            size="14.0" />
+                                    </font>
+
+                                </Label>
+
+                                <Region
+                                    HBox.hgrow="ALWAYS" />
+
+                                <Label
+                                    text="Car Inventory"
+                                    textFill="#858A8F">
+
+                                    <font>
+                                        <Font size="12.0" />
+                                    </font>
+
+                                </Label>
+
+                            </children>
+
+                        </HBox>
+
+
+                        <!-- ================================================= -->
+                        <!-- CARS TABLE -->
+                        <!-- ================================================= -->
+
+                        <TableView
+                            fx:id="tblCars"
+                            maxWidth="Infinity"
+                            maxHeight="Infinity"
+                            VBox.vgrow="ALWAYS"
+                            style="-fx-background-color: white;
+                                   -fx-border-color: transparent;
+                                   -fx-table-cell-border-color: #E1E3E5;
+                                   -fx-font-size: 13px;">
+
+                            <columns>
+
+                                <!-- ID -->
+
+                                <TableColumn
+                                    fx:id="colId"
+                                    minWidth="60.0"
+                                    prefWidth="70.0"
+                                    text="ID" />
+
+
+                                <!-- NUMBER -->
+
+                                <TableColumn
+                                    fx:id="colNumber"
+                                    minWidth="100.0"
+                                    prefWidth="130.0"
+                                    text="Number" />
+
+
+                                <!-- BRAND -->
+
+                                <TableColumn
+                                    fx:id="colBrand"
+                                    minWidth="110.0"
+                                    prefWidth="150.0"
+                                    text="Brand" />
+
+
+                                <!-- MODEL -->
+
+                                <TableColumn
+                                    fx:id="colModel"
+                                    minWidth="100.0"
+                                    prefWidth="140.0"
+                                    text="Model" />
+
+
+                                <!-- YEAR -->
+
+                                <TableColumn
+                                    fx:id="colYear"
+                                    minWidth="80.0"
+                                    prefWidth="100.0"
+                                    text="Year" />
+
+
+                                <!-- COLOR -->
+
+                                <TableColumn
+                                    fx:id="colColor"
+                                    minWidth="90.0"
+                                    prefWidth="120.0"
+                                    text="Color" />
+
+
+                                <!-- PRICE -->
+
+                                <TableColumn
+                                    fx:id="colPrice"
+                                    minWidth="90.0"
+                                    prefWidth="120.0"
+                                    text="Price" />
+
+
+                                <!-- STATUS -->
+
+                                <TableColumn
+                                    fx:id="colStatus"
+                                    minWidth="100.0"
+                                    prefWidth="130.0"
+                                    text="Status" />
+
+                            </columns>
+
+                        </TableView>
+
+                    </children>
+
+                </VBox>
+
+            </children>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

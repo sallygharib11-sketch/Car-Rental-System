@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane
+    prefWidth="1100.0"
+    prefHeight="700.0"
+    minWidth="700.0"
+    minHeight="500.0"
+    xmlns="http://javafx.com/javafx/25"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="controllers.AdminDashboardController">
+
+    <children>
+
+        <!-- ===================================================== -->
+        <!-- MAIN BACKGROUND -->
+        <!-- ===================================================== -->
+
+        <VBox
+            spacing="0.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #F5F5F5, #D9DDE1);"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0">
+
+            <children>
+
+                <!-- ================================================= -->
+                <!-- TOP NAVIGATION -->
+                <!-- ================================================= -->
+
+                <HBox
+                    alignment="CENTER_LEFT"
+                    minHeight="70.0"
+                    prefHeight="70.0"
+                    spacing="15.0"
+                    style="-fx-background-color: #2F3438;
+                           -fx-padding: 0 25 0 25;">
+
+                    <children>
+
+                        <!-- BRAND -->
+
+                        <VBox
+                            spacing="2.0"
+                            alignment="CENTER_LEFT">
+
+                            <children>
+
+                                <Label
+                                    text="PDR CAR RENTAL"
+                                    textFill="WHITE">
+
+                                    <font>
+                                        <Font
+                                            name="System Bold"
+                                            size="20.0" />
+                                    </font>
+
+                                </Label>
+
+                                <Label
+                                    text="ADMINISTRATION"
+                                    textFill="#BFC3C7">
+
+                                    <font>
+                                        <Font
+                                            name="System"
+                                            size="10.0" />
+                                    </font>
+
+                                </Label>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <!-- SPACER -->
+
+                        <AnchorPane
+                            HBox.hgrow="ALWAYS" />
+
+
+                        <!-- DASHBOARD -->
+
+                        <Button
+                            fx:id="btnDashboard"
+                            mnemonicParsing="false"
+                            onAction="#openDashboard"
+                            text="⌂  Dashboard"
+                            prefHeight="42.0"
+                            style="-fx-background-color: transparent;
+                                   -fx-text-fill: #E5E7E9;
+                                   -fx-font-size: 14px;
+                                   -fx-font-weight: bold;
+                                   -fx-cursor: hand;
+                                   -fx-background-radius: 8;
+                                   -fx-padding: 0 15 0 15;">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="14.0" />
+                            </font>
+
+                        </Button>
+
+
+                        <!-- LOGOUT -->
+
+                        <Button
+                            fx:id="btnLogout"
+                            mnemonicParsing="false"
+                            onAction="#logout"
+                            text="Logout"
+                            prefHeight="42.0"
+                            style="-fx-background-color: #555B60;
+                                   -fx-text-fill: WHITE;
+                                   -fx-font-size: 14px;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 8;
+                                   -fx-cursor: hand;
+                                   -fx-padding: 0 18 0 18;">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="14.0" />
+                            </font>
+
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+
+                        </Button>
+
+                    </children>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- SEPARATOR -->
+                <!-- ================================================= -->
+
+                <Separator
+                    style="-fx-background-color: #9DA2A7;" />
+
+
+                <!-- ================================================= -->
+                <!-- MAIN CONTENT -->
+                <!-- ================================================= -->
+
+                <StackPane
+                    VBox.vgrow="ALWAYS">
+
+                    <children>
+
+                        <VBox
+                            maxWidth="1000.0"
+                            spacing="28.0"
+                            alignment="TOP_CENTER"
+                            style="-fx-padding: 35 45 40 45;">
+
+                            <children>
+
+                                <!-- ================================================= -->
+                                <!-- PAGE TITLE -->
+                                <!-- ================================================= -->
+
+                                <VBox
+                                    alignment="CENTER"
+                                    spacing="6.0">
+
+                                    <children>
+
+                                        <Label
+                                            text="Admin Dashboard"
+                                            textFill="#303438"
+                                            alignment="CENTER">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="32.0" />
+                                            </font>
+
+                                        </Label>
+
+                                        <Label
+                                            text="Manage your car rental system"
+                                            textFill="#777D83"
+                                            alignment="CENTER">
+
+                                            <font>
+                                                <Font size="15.0" />
+                                            </font>
+
+                                        </Label>
+
+                                    </children>
+
+                                </VBox>
+
+
+                                <!-- ================================================= -->
+                                <!-- DASHBOARD BUTTONS -->
+                                <!-- ================================================= -->
+
+                                <GridPane
+                                    hgap="20.0"
+                                    vgap="20.0"
+                                    maxWidth="1000.0"
+                                    VBox.vgrow="ALWAYS">
+
+                                    <columnConstraints>
+
+                                        <ColumnConstraints
+                                            percentWidth="50.0"
+                                            hgrow="ALWAYS" />
+
+                                        <ColumnConstraints
+                                            percentWidth="50.0"
+                                            hgrow="ALWAYS" />
+
+                                    </columnConstraints>
+
+
+                                    <rowConstraints>
+
+                                        <RowConstraints
+                                            percentHeight="33.33"
+                                            vgrow="ALWAYS" />
+
+                                        <RowConstraints
+                                            percentHeight="33.33"
+                                            vgrow="ALWAYS" />
+
+                                        <RowConstraints
+                                            percentHeight="33.34"
+                                            vgrow="ALWAYS" />
+
+                                    </rowConstraints>
+
+
+                                    <children>
+
+                                        <!-- ================================================= -->
+                                        <!-- CUSTOMERS -->
+                                        <!-- ================================================= -->
+
+                                        <Button
+                                            fx:id="btnCustomers"
+                                            mnemonicParsing="false"
+                                            onAction="#openCustomers"
+                                            maxWidth="Infinity"
+                                            maxHeight="Infinity"
+                                            text="CUSTOMERS&#10;&#10;Manage Customers"
+                                            style="-fx-background-color: #FFFFFF;
+                                                   -fx-text-fill: #353A3F;
+                                                   -fx-background-radius: 14;
+                                                   -fx-border-color: #C1C5C9;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 14;
+                                                   -fx-font-size: 17px;
+                                                   -fx-font-weight: bold;
+                                                   -fx-cursor: hand;
+                                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0.1, 0, 4);"
+                                            GridPane.columnIndex="0"
+                                            GridPane.rowIndex="0">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="17.0" />
+                                            </font>
+
+                                            <GridPane.margin>
+                                                <Insets
+                                                    top="5.0"
+                                                    right="5.0"
+                                                    bottom="5.0"
+                                                    left="5.0" />
+                                            </GridPane.margin>
+
+                                        </Button>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- PAYMENTS -->
+                                        <!-- ================================================= -->
+
+                                        <Button
+                                            fx:id="btnPayments"
+                                            mnemonicParsing="false"
+                                            onAction="#openPayments"
+                                            maxWidth="Infinity"
+                                            maxHeight="Infinity"
+                                            text="PAYMENTS&#10;&#10;Manage Payments"
+                                            style="-fx-background-color: #FFFFFF;
+                                                   -fx-text-fill: #353A3F;
+                                                   -fx-background-radius: 14;
+                                                   -fx-border-color: #C1C5C9;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 14;
+                                                   -fx-font-size: 17px;
+                                                   -fx-font-weight: bold;
+                                                   -fx-cursor: hand;
+                                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0.1, 0, 4);"
+                                            GridPane.columnIndex="1"
+                                            GridPane.rowIndex="0">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="17.0" />
+                                            </font>
+
+                                            <GridPane.margin>
+                                                <Insets
+                                                    top="5.0"
+                                                    right="5.0"
+                                                    bottom="5.0"
+                                                    left="5.0" />
+                                            </GridPane.margin>
+
+                                        </Button>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- CARS -->
+                                        <!-- ================================================= -->
+
+                                        <Button
+                                            fx:id="btnCars"
+                                            mnemonicParsing="false"
+                                            onAction="#openCars"
+                                            maxWidth="Infinity"
+                                            maxHeight="Infinity"
+                                            text="CARS&#10;&#10;Manage Vehicles"
+                                            style="-fx-background-color: #FFFFFF;
+                                                   -fx-text-fill: #353A3F;
+                                                   -fx-background-radius: 14;
+                                                   -fx-border-color: #C1C5C9;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 14;
+                                                   -fx-font-size: 17px;
+                                                   -fx-font-weight: bold;
+                                                   -fx-cursor: hand;
+                                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0.1, 0, 4);"
+                                            GridPane.columnIndex="0"
+                                            GridPane.rowIndex="1">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="17.0" />
+                                            </font>
+
+                                            <GridPane.margin>
+                                                <Insets
+                                                    top="5.0"
+                                                    right="5.0"
+                                                    bottom="5.0"
+                                                    left="5.0" />
+                                            </GridPane.margin>
+
+                                        </Button>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- EMPLOYEES -->
+                                        <!-- ================================================= -->
+
+                                        <Button
+                                            fx:id="btnEmployees"
+                                            mnemonicParsing="false"
+                                            onAction="#openEmployees"
+                                            maxWidth="Infinity"
+                                            maxHeight="Infinity"
+                                            text="EMPLOYEES&#10;&#10;Manage Employees"
+                                            style="-fx-background-color: #FFFFFF;
+                                                   -fx-text-fill: #353A3F;
+                                                   -fx-background-radius: 14;
+                                                   -fx-border-color: #C1C5C9;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 14;
+                                                   -fx-font-size: 17px;
+                                                   -fx-font-weight: bold;
+                                                   -fx-cursor: hand;
+                                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0.1, 0, 4);"
+                                            GridPane.columnIndex="1"
+                                            GridPane.rowIndex="1">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="17.0" />
+                                            </font>
+
+                                            <GridPane.margin>
+                                                <Insets
+                                                    top="5.0"
+                                                    right="5.0"
+                                                    bottom="5.0"
+                                                    left="5.0" />
+                                            </GridPane.margin>
+
+                                        </Button>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- RENTALS -->
+                                        <!-- ================================================= -->
+
+                                        <Button
+                                            fx:id="btnRentals"
+                                            mnemonicParsing="false"
+                                            onAction="#openRentals"
+                                            maxWidth="Infinity"
+                                            maxHeight="Infinity"
+                                            text="RENTALS&#10;&#10;Manage Rentals"
+                                            style="-fx-background-color: #FFFFFF;
+                                                   -fx-text-fill: #353A3F;
+                                                   -fx-background-radius: 14;
+                                                   -fx-border-color: #C1C5C9;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 14;
+                                                   -fx-font-size: 17px;
+                                                   -fx-font-weight: bold;
+                                                   -fx-cursor: hand;
+                                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 10, 0.1, 0, 4);"
+                                            GridPane.columnIndex="0"
+                                            GridPane.rowIndex="2">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="17.0" />
+                                            </font>
+
+                                            <GridPane.margin>
+                                                <Insets
+                                                    top="5.0"
+                                                    right="5.0"
+                                                    bottom="5.0"
+                                                    left="5.0" />
+                                            </GridPane.margin>
+
+                                        </Button>
+
+
+                                        <!-- ================================================= -->
+                                        <!-- SYSTEM INFO -->
+                                        <!-- ================================================= -->
+
+                                        <VBox
+                                            alignment="CENTER"
+                                            spacing="8.0"
+                                            style="-fx-background-color: #E8EAEC;
+                                                   -fx-background-radius: 14;
+                                                   -fx-border-color: #C1C5C9;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 14;"
+                                            GridPane.columnIndex="1"
+                                            GridPane.rowIndex="2">
+
+                                            <children>
+
+                                                <Label
+                                                    text="ADMINISTRATOR"
+                                                    textFill="#555B60">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="14.0" />
+                                                    </font>
+
+                                                </Label>
+
+                                                <Label
+                                                    text="System Management"
+                                                    textFill="#858A8F">
+
+                                                    <font>
+                                                        <Font size="13.0" />
+                                                    </font>
+
+                                                </Label>
+
+                                            </children>
+
+                                            <GridPane.margin>
+                                                <Insets
+                                                    top="5.0"
+                                                    right="5.0"
+                                                    bottom="5.0"
+                                                    left="5.0" />
+                                            </GridPane.margin>
+
+                                        </VBox>
+
+                                    </children>
+
+                                </GridPane>
+
+                            </children>
+
+                        </VBox>
+
+                    </children>
+
+                </StackPane>
+
+            </children>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

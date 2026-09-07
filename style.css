@@ -1,0 +1,66 @@
+/* =========================
+   TOP HEADER
+   ========================= */
+
+#employeeHeader {
+    -fx-background-color: #f5f6fa;
+
+   
+
+    -fx-alignment: CENTER_LEFT;
+
+    -fx-border-color: #dcdde1;
+    -fx-border-width: 0 0 1 0;
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+.header-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2f3640;
+}
+
+
+/* =========================
+   MENU BUTTON
+   ========================= */
+
+.menu-button {
+    -fx-background-color: white;
+    -fx-border-color: #dcdde1;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.menu-button:hover {
+    -fx-background-color: #eeeeee;
+}
+
+
+/* =========================
+   ADD BUTTON
+   ========================= */
+
+.add-button {
+    -fx-background-color: #27ae60;
+    -fx-text-fill: white;
+
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+
+    -fx-padding: 8px 15px;
+}
+
+.add-button:hover {
+    -fx-background-color: #219150;
+}

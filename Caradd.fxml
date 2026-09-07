@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane
+    prefHeight="700.0"
+    prefWidth="1100.0"
+    minHeight="600.0"
+    minWidth="850.0"
+    xmlns="http://javafx.com/javafx/25"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="controllers.CaraddController">
+
+    <children>
+
+        <!-- ========================================================= -->
+        <!-- MAIN BACKGROUND -->
+        <!-- ========================================================= -->
+
+        <AnchorPane
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0"
+            style="-fx-background-color: linear-gradient(to bottom right, #17191B, #292D31, #111315);">
+
+            <children>
+
+                <!-- ================================================= -->
+                <!-- TOP SILVER LINE -->
+                <!-- ================================================= -->
+
+                <AnchorPane
+                    prefHeight="5.0"
+                    AnchorPane.topAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0"
+                    style="-fx-background-color: #AEB3B8;" />
+
+
+                <!-- ================================================= -->
+                <!-- NAVIGATION BAR -->
+                <!-- ================================================= -->
+
+                <HBox
+                    alignment="CENTER_LEFT"
+                    spacing="18.0"
+                    prefHeight="70.0"
+                    AnchorPane.topAnchor="5.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0"
+                    style="-fx-background-color: #111315;
+                           -fx-padding: 0 30 0 30;
+                           -fx-border-color: #44484C;
+                           -fx-border-width: 0 0 1 0;">
+
+                    <children>
+
+                        <!-- LOGO -->
+
+                        <Label
+                            text="CAR RENTAL"
+                            textFill="#D7DADD">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="21.0" />
+                            </font>
+                        </Label>
+
+                        <Label
+                            text="SYSTEM"
+                            textFill="#858B91">
+
+                            <font>
+                                <Font
+                                    name="System"
+                                    size="12.0" />
+                            </font>
+                        </Label>
+
+
+                        <!-- SPACER -->
+
+                        <HBox
+                            HBox.hgrow="ALWAYS" />
+
+
+                        <!-- DASHBOARD -->
+
+                        <MenuButton
+                            fx:id="btnDashboard"
+                            mnemonicParsing="false"
+                            onAction="#handleDashboard"
+                            text="Dashboard"
+                            textFill="WHITE"
+                            style="-fx-background-color: transparent;
+                                   -fx-font-size: 14px;
+                                   -fx-font-weight: bold;
+                                   -fx-cursor: hand;">
+
+                            <items>
+
+                                <MenuItem
+                                    mnemonicParsing="false"
+                                    text="Dashboard" />
+
+                                <MenuItem
+                                    mnemonicParsing="false"
+                                    text="Customers" />
+
+                                <MenuItem
+                                    mnemonicParsing="false"
+                                    text="Cars" />
+
+                                <MenuItem
+                                    mnemonicParsing="false"
+                                    text="Employees" />
+
+                                <MenuItem
+                                    mnemonicParsing="false"
+                                    text="Rentals" />
+
+                            </items>
+
+                        </MenuButton>
+
+
+                        <!-- LOGOUT -->
+
+                        <Button
+                            fx:id="btnLogout"
+                            mnemonicParsing="false"
+                            onAction="#handleLogout"
+                            text="Logout"
+                            style="-fx-background-color: #3D4247;
+                                   -fx-text-fill: white;
+                                   -fx-font-size: 13px;
+                                   -fx-font-weight: bold;
+                                   -fx-background-radius: 7;
+                                   -fx-padding: 9 18 9 18;
+                                   -fx-cursor: hand;" />
+
+                    </children>
+
+                </HBox>
+
+
+                <!-- ================================================= -->
+                <!-- PAGE CONTENT -->
+                <!-- ================================================= -->
+
+                <VBox
+                    alignment="TOP_CENTER"
+                    spacing="18.0"
+                    AnchorPane.topAnchor="105.0"
+                    AnchorPane.bottomAnchor="25.0"
+                    AnchorPane.leftAnchor="40.0"
+                    AnchorPane.rightAnchor="40.0">
+
+                    <children>
+
+                        <!-- PAGE TITLE -->
+
+                        <VBox
+                            alignment="CENTER"
+                            spacing="5.0">
+
+                            <children>
+
+                                <Label
+                                    text="ADD NEW CAR"
+                                    textFill="#E5E7E9">
+
+                                    <font>
+                                        <Font
+                                            name="System Bold"
+                                            size="30.0" />
+                                    </font>
+                                </Label>
+
+                                <Label
+                                    text="Enter the vehicle information below"
+                                    textFill="#858B91">
+
+                                    <font>
+                                        <Font
+                                            name="System"
+                                            size="14.0" />
+                                    </font>
+                                </Label>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <!-- ================================================= -->
+                        <!-- FORM CARD -->
+                        <!-- ================================================= -->
+
+                        <VBox
+                            maxWidth="850.0"
+                            spacing="20.0"
+                            style="-fx-background-color: rgba(255,255,255,0.07);
+                                   -fx-background-radius: 18;
+                                   -fx-border-color: #555A5F;
+                                   -fx-border-width: 1;
+                                   -fx-border-radius: 18;
+                                   -fx-padding: 30;
+                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 20, 0.2, 0, 8);">
+
+                            <children>
+
+                                <!-- ================================================= -->
+                                <!-- BRAND / YEAR -->
+                                <!-- ================================================= -->
+
+                                <HBox
+                                    spacing="20.0">
+
+                                    <children>
+
+                                        <!-- BRAND -->
+
+                                        <VBox
+                                            spacing="7.0"
+                                            HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <Label
+                                                    text="BRAND"
+                                                    textFill="#AEB3B8">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <ComboBox
+                                                    fx:id="cmbBrand"
+                                                    editable="true"
+                                                    prefHeight="45.0"
+                                                    maxWidth="Infinity"
+                                                    promptText="Select Brand..."
+                                                    style="-fx-background-color: #24282C;
+                                                           -fx-border-color: #555A5F;
+                                                           -fx-border-radius: 8;
+                                                           -fx-background-radius: 8;
+                                                           -fx-font-size: 13px;" />
+
+                                            </children>
+
+                                        </VBox>
+
+
+                                        <!-- YEAR -->
+
+                                        <VBox
+                                            spacing="7.0"
+                                            HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <Label
+                                                    text="YEAR"
+                                                    textFill="#AEB3B8">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <HBox
+                                                    alignment="CENTER_LEFT"
+                                                    spacing="8.0">
+
+                                                    <children>
+
+                                                        <ComboBox
+                                                            fx:id="cmbYear"
+                                                            prefHeight="45.0"
+                                                            prefWidth="150.0"
+                                                            promptText="Select year..."
+                                                            HBox.hgrow="ALWAYS"
+                                                            style="-fx-background-color: #24282C;
+                                                                   -fx-border-color: #555A5F;
+                                                                   -fx-border-radius: 8;
+                                                                   -fx-background-radius: 8;" />
+
+                                                        <Label
+                                                            text="OR"
+                                                            textFill="#777D82">
+
+                                                            <font>
+                                                                <Font
+                                                                    name="System Bold"
+                                                                    size="11.0" />
+                                                            </font>
+                                                        </Label>
+
+                                                        <TextField
+                                                            fx:id="txtNewYear"
+                                                            prefHeight="45.0"
+                                                            prefWidth="130.0"
+                                                            promptText="New year"
+                                                            style="-fx-background-color: #24282C;
+                                                                   -fx-text-fill: #E5E7E9;
+                                                                   -fx-prompt-text-fill: #777D82;
+                                                                   -fx-border-color: #555A5F;
+                                                                   -fx-border-radius: 8;
+                                                                   -fx-background-radius: 8;
+                                                                   -fx-padding: 0 12 0 12;" />
+
+                                                        <Button
+                                                            fx:id="btnAddYear"
+                                                            mnemonicParsing="false"
+                                                            onAction="#handleAddYear"
+                                                            text="+"
+                                                            prefHeight="45.0"
+                                                            prefWidth="45.0"
+                                                            style="-fx-background-color: #4B5156;
+                                                                   -fx-text-fill: white;
+                                                                   -fx-font-size: 18px;
+                                                                   -fx-font-weight: bold;
+                                                                   -fx-background-radius: 8;
+                                                                   -fx-cursor: hand;" />
+
+                                                    </children>
+
+                                                </HBox>
+
+                                            </children>
+
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+
+                                <!-- ================================================= -->
+                                <!-- MODEL / CAR NUMBER -->
+                                <!-- ================================================= -->
+
+                                <HBox
+                                    spacing="20.0">
+
+                                    <children>
+
+                                        <!-- MODEL -->
+
+                                        <VBox
+                                            spacing="7.0"
+                                            HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <Label
+                                                    text="MODEL"
+                                                    textFill="#AEB3B8">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <TextField
+                                                    fx:id="txtModel"
+                                                    prefHeight="45.0"
+                                                    maxWidth="Infinity"
+                                                    promptText="Enter car model"
+                                                    style="-fx-background-color: #24282C;
+                                                           -fx-text-fill: #E5E7E9;
+                                                           -fx-prompt-text-fill: #777D82;
+                                                           -fx-border-color: #555A5F;
+                                                           -fx-border-radius: 8;
+                                                           -fx-background-radius: 8;
+                                                           -fx-padding: 0 12 0 12;" />
+
+                                            </children>
+
+                                        </VBox>
+
+
+                                        <!-- CAR NUMBER -->
+
+                                        <VBox
+                                            spacing="7.0"
+                                            HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <Label
+                                                    text="CAR NUMBER"
+                                                    textFill="#AEB3B8">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <TextField
+                                                    fx:id="txtCarNumber"
+                                                    prefHeight="45.0"
+                                                    maxWidth="Infinity"
+                                                    promptText="Enter car number"
+                                                    style="-fx-background-color: #24282C;
+                                                           -fx-text-fill: #E5E7E9;
+                                                           -fx-prompt-text-fill: #777D82;
+                                                           -fx-border-color: #555A5F;
+                                                           -fx-border-radius: 8;
+                                                           -fx-background-radius: 8;
+                                                           -fx-padding: 0 12 0 12;" />
+
+                                            </children>
+
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+
+                                <!-- ================================================= -->
+                                <!-- COLOR / PRICE / STATUS -->
+                                <!-- ================================================= -->
+
+                                <HBox
+                                    spacing="20.0">
+
+                                    <children>
+
+                                        <!-- COLOR -->
+
+                                        <VBox
+                                            spacing="7.0"
+                                            HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <Label
+                                                    text="COLOR"
+                                                    textFill="#AEB3B8">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <ColorPicker
+                                                    fx:id="colorPicker"
+                                                    prefHeight="45.0"
+                                                    maxWidth="Infinity"
+                                                    style="-fx-background-color: #24282C;
+                                                           -fx-border-color: #555A5F;
+                                                           -fx-border-radius: 8;
+                                                           -fx-background-radius: 8;" />
+
+                                            </children>
+
+                                        </VBox>
+
+
+                                        <!-- PRICE -->
+
+                                        <VBox
+                                            spacing="7.0"
+                                            HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <Label
+                                                    text="PRICE PER DAY"
+                                                    textFill="#AEB3B8">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <Spinner
+                                                    fx:id="spnPrice"
+                                                    editable="true"
+                                                    prefHeight="45.0"
+                                                    maxWidth="Infinity"
+                                                    style="-fx-background-color: #24282C;
+                                                           -fx-border-color: #555A5F;
+                                                           -fx-border-radius: 8;
+                                                           -fx-background-radius: 8;" />
+
+                                            </children>
+
+                                        </VBox>
+
+
+                                        <!-- STATUS -->
+
+                                        <VBox
+                                            spacing="7.0"
+                                            HBox.hgrow="ALWAYS">
+
+                                            <children>
+
+                                                <Label
+                                                    text="STATUS"
+                                                    textFill="#AEB3B8">
+
+                                                    <font>
+                                                        <Font
+                                                            name="System Bold"
+                                                            size="12.0" />
+                                                    </font>
+                                                </Label>
+
+                                                <ComboBox
+                                                    fx:id="cmbStatus"
+                                                    prefHeight="45.0"
+                                                    maxWidth="Infinity"
+                                                    promptText="Select status..."
+                                                    style="-fx-background-color: #24282C;
+                                                           -fx-border-color: #555A5F;
+                                                           -fx-border-radius: 8;
+                                                           -fx-background-radius: 8;" />
+
+                                            </children>
+
+                                        </VBox>
+
+                                    </children>
+
+                                </HBox>
+
+
+                                <!-- ================================================= -->
+                                <!-- BUTTONS -->
+                                <!-- ================================================= -->
+
+                                <HBox
+                                    alignment="CENTER_RIGHT"
+                                    spacing="12.0">
+
+                                    <children>
+
+                                        <Button
+                                            fx:id="btnCancel"
+                                            mnemonicParsing="false"
+                                            onAction="#handleCancel"
+                                            text="CANCEL"
+                                            prefHeight="45.0"
+                                            prefWidth="130.0"
+                                            style="-fx-background-color: transparent;
+                                                   -fx-text-fill: #B8BDC2;
+                                                   -fx-border-color: #666C71;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 8;
+                                                   -fx-background-radius: 8;
+                                                   -fx-font-weight: bold;
+                                                   -fx-cursor: hand;" />
+
+                                        <Button
+                                            fx:id="btnSave"
+                                            mnemonicParsing="false"
+                                            onAction="#handleSave"
+                                            text="SAVE CAR"
+                                            prefHeight="45.0"
+                                            prefWidth="150.0"
+                                            style="-fx-background-color: linear-gradient(to right, #4D5358, #777D82);
+                                                   -fx-text-fill: white;
+                                                   -fx-background-radius: 8;
+                                                   -fx-font-weight: bold;
+                                                   -fx-font-size: 13px;
+                                                   -fx-cursor: hand;
+                                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.1, 0, 3);" />
+
+                                    </children>
+
+                                </HBox>
+
+                            </children>
+
+                        </VBox>
+
+
+                        <!-- FOOTER -->
+
+                        <Label
+                            text="Car Rental Management System • 2026"
+                            textFill="#686E73">
+
+                            <font>
+                                <Font size="11.0" />
+                            </font>
+
+                        </Label>
+
+                    </children>
+
+                </VBox>
+
+            </children>
+
+        </AnchorPane>
+
+    </children>
+
+</AnchorPane>
+

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+    minWidth="750.0"
+    minHeight="500.0"
+    xmlns="http://javafx.com/javafx/26"
+    xmlns:fx="http://javafx.com/fxml/1"
+    >
+
+    <!-- ====================================================== -->
+    <!-- HEADER -->
+    <!-- ====================================================== -->
+
+    <top>
+
+        <VBox
+            spacing="0"
+            style="-fx-background-color: #1c1c1c;">
+
+            <HBox
+                alignment="CENTER_LEFT"
+                spacing="15"
+                minHeight="72"
+                style="-fx-padding: 0 28 0 28;">
+
+                <children>
+
+                    <!-- LOGO -->
+<Label
+    text="🔥 NEW RENTALS DESIGN 🔥"
+    style="
+        -fx-font-size: 40px;
+        -fx-font-weight: bold;
+        -fx-text-fill: red;
+    "/>
+                    <Label
+                        text="PDR"
+                        style="
+                            -fx-text-fill: #d8d8d8;
+                            -fx-font-size: 25px;
+                            -fx-font-weight: bold;
+                        " />
+
+                    <Label
+                        text="CAR RENTAL"
+                        style="
+                            -fx-text-fill: #8f8f8f;
+                            -fx-font-size: 13px;
+                            -fx-font-weight: bold;
+                        " />
+
+                    <!-- FLEXIBLE SPACE -->
+
+                    <Region
+                        HBox.hgrow="ALWAYS" />
+
+                    <!-- PAGE NAME -->
+
+                    <Label
+                        text="RENTALS"
+                        style="
+                            -fx-text-fill: #cfcfcf;
+                            -fx-font-size: 14px;
+                            -fx-font-weight: bold;
+                        " />
+
+                    <!-- NAVIGATION -->
+
+                    <MenuButton
+                        fx:id="btnnav"
+                        text="Navigation"
+                        style="
+                            -fx-background-color: #2a2a2a;
+                            -fx-text-fill: #dddddd;
+                            -fx-background-radius: 6;
+                            -fx-font-weight: bold;
+                        ">
+
+                        <items>
+
+                            <MenuItem
+                                text="Dashboard"
+                                onAction="#openDashboard" />
+
+                            <MenuItem
+                                text="Customers"
+                                onAction="#openCustomers" />
+
+                            <MenuItem
+                                text="Cars"
+                                onAction="#openCars" />
+
+                            <MenuItem
+                                text="Employees"
+                                onAction="#openEmployees" />
+
+                            <MenuItem
+                                text="Rentals"
+                                onAction="#openRentals" />
+
+                            <MenuItem
+                                text="Payments"
+                                onAction="#openPayments" />
+
+                        </items>
+
+                    </MenuButton>
+
+                    <!-- LOGOUT -->
+
+                    <Button
+                        fx:id="btnlogout"
+                        text="Logout"
+                        onAction="#logout"
+                        style="
+                            -fx-background-color: #a83232;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;
+                            -fx-background-radius: 6;
+                            -fx-padding: 9 18 9 18;
+                        " />
+
+                </children>
+
+            </HBox>
+
+            <!-- HEADER LINE -->
+
+            <Region
+                minHeight="2"
+                prefHeight="2"
+                style="-fx-background-color: #9e9e9e;" />
+
+        </VBox>
+
+    </top>
+
+
+    <!-- ====================================================== -->
+    <!-- MAIN CONTENT -->
+    <!-- ====================================================== -->
+
+    <center>
+
+        <VBox
+            spacing="20"
+            fillWidth="true"
+            style="
+                -fx-background-color: #d9d9d9;
+                -fx-padding: 30;
+            ">
+
+            <!-- ================================================== -->
+            <!-- PAGE HEADING -->
+            <!-- ================================================== -->
+
+            <VBox spacing="5">
+
+                <Label
+                    text="Rental Management"
+                    style="
+                        -fx-text-fill: #222222;
+                        -fx-font-size: 30px;
+                        -fx-font-weight: bold;
+                    " />
+
+                <Label
+                    text="Create, update and monitor vehicle rentals"
+                    style="
+                        -fx-text-fill: #666666;
+                        -fx-font-size: 14px;
+                    " />
+
+            </VBox>
+
+
+            <!-- ================================================== -->
+            <!-- TOOLBAR CARD -->
+            <!-- ================================================== -->
+
+            <VBox
+                spacing="12"
+                style="
+                    -fx-background-color: #eeeeee;
+                    -fx-background-radius: 10;
+                    -fx-border-color: #c2c2c2;
+                    -fx-border-radius: 10;
+                    -fx-padding: 18;
+                ">
+
+                <Label
+                    text="Rental Actions"
+                    style="
+                        -fx-text-fill: #333333;
+                        -fx-font-size: 16px;
+                        -fx-font-weight: bold;
+                    " />
+
+                <FlowPane
+                    alignment="CENTER_LEFT"
+                    hgap="10"
+                    vgap="10"
+                    prefWrapLength="900">
+
+                    <children>
+
+                        <!-- SEARCH -->
+
+                        <TextField
+                            fx:id="txtSearch"
+                            promptText="Search rental..."
+                            minWidth="180"
+                            prefHeight="40"
+                            style="
+                                -fx-background-color: white;
+                                -fx-border-color: #b5b5b5;
+                                -fx-border-radius: 6;
+                                -fx-background-radius: 6;
+                                -fx-padding: 0 12 0 12;
+                            " />
+
+                        <Button
+                            fx:id="btnsearch"
+                            text="Search"
+                            onAction="#handleSearch"
+                            prefHeight="40"
+                            style="
+                                -fx-background-color: #555555;
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-background-radius: 6;
+                                -fx-padding: 0 20 0 20;
+                            " />
+
+                        <Button
+                            fx:id="btnAdd"
+                            text="+ Add Rental"
+                            onAction="#handleAdd"
+                            prefHeight="40"
+                            style="
+                                -fx-background-color: #3d7d46;
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-background-radius: 6;
+                                -fx-padding: 0 20 0 20;
+                            " />
+
+                        <Button
+                            fx:id="btnEdit"
+                            text="Update"
+                            onAction="#handleUpdate"
+                            prefHeight="40"
+                            style="
+                                -fx-background-color: #777777;
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-background-radius: 6;
+                                -fx-padding: 0 20 0 20;
+                            " />
+
+                        <Button
+                            fx:id="btnDelete"
+                            text="Delete"
+                            onAction="#handleDelete"
+                            prefHeight="40"
+                            style="
+                                -fx-background-color: #a83232;
+                                -fx-text-fill: white;
+                                -fx-font-weight: bold;
+                                -fx-background-radius: 6;
+                                -fx-padding: 0 20 0 20;
+                            " />
+
+                    </children>
+
+                </FlowPane>
+
+            </VBox>
+
+
+            <!-- ================================================== -->
+            <!-- TABLE CARD -->
+            <!-- ================================================== -->
+
+            <VBox
+                VBox.vgrow="ALWAYS"
+                fillWidth="true"
+                spacing="0"
+                style="
+                    -fx-background-color: white;
+                    -fx-background-radius: 10;
+                    -fx-border-color: #c0c0c0;
+                    -fx-border-radius: 10;
+                ">
+
+                <!-- TABLE HEADER -->
+
+                <HBox
+                    alignment="CENTER_LEFT"
+                    minHeight="55"
+                    style="
+                        -fx-background-color: #242424;
+                        -fx-padding: 0 20 0 20;
+                        -fx-background-radius: 10 10 0 0;
+                    ">
+
+                    <Label
+                        text="Rental Records"
+                        style="
+                            -fx-text-fill: #dddddd;
+                            -fx-font-size: 17px;
+                            -fx-font-weight: bold;
+                        " />
+
+                    <Region
+                        HBox.hgrow="ALWAYS" />
+
+                    <Label
+                        text="All Rentals"
+                        style="
+                            -fx-text-fill: #aaaaaa;
+                            -fx-font-size: 13px;
+                        " />
+
+                </HBox>
+
+
+                <!-- TABLE -->
+
+                <TableView
+                    fx:id="tblMovies"
+                    VBox.vgrow="ALWAYS"
+                    maxWidth="Infinity"
+                    maxHeight="Infinity"
+                    style="
+                        -fx-background-color: white;
+                        -fx-border-color: transparent;
+                    ">
+
+                    <columnResizePolicy>
+                        <TableView
+                            fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN" />
+                    </columnResizePolicy>
+
+                    <columns>
+
+                        <TableColumn
+                            fx:id="colId"
+                            text="ID"
+                            minWidth="60" />
+
+                        <TableColumn
+                            fx:id="colTitle"
+                            text="Customer ID"
+                            minWidth="100" />
+
+                        <TableColumn
+                            fx:id="colDescription"
+                            text="Car ID"
+                            minWidth="90" />
+
+                        <TableColumn
+                            fx:id="colGenre"
+                            text="Employee ID"
+                            minWidth="100" />
+
+                        <TableColumn
+                            fx:id="colLanguage"
+                            text="Checkout Date"
+                            minWidth="120" />
+
+                        <TableColumn
+                            fx:id="colReturnDate"
+                            text="Return Date"
+                            minWidth="120" />
+
+                        <TableColumn
+                            fx:id="colTotalPrice"
+                            text="Total Price"
+                            minWidth="100" />
+
+                        <TableColumn
+                            fx:id="colStatus"
+                            text="Status"
+                            minWidth="100" />
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

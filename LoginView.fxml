@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane
+    prefWidth="1000.0"
+    prefHeight="650.0"
+    minWidth="600.0"
+    minHeight="500.0"
+    xmlns="http://javafx.com/javafx/25"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="controllers.LoginViewController">
+
+    <children>
+
+        <!-- ===================================================== -->
+        <!-- MAIN SILVER BACKGROUND -->
+        <!-- ===================================================== -->
+
+        <AnchorPane
+            style="-fx-background-color: linear-gradient(to bottom right, #F5F5F5, #D5D8DC, #B8BDC3);"
+            AnchorPane.topAnchor="0.0"
+            AnchorPane.bottomAnchor="0.0"
+            AnchorPane.leftAnchor="0.0"
+            AnchorPane.rightAnchor="0.0">
+
+            <children>
+
+                <!-- ================================================= -->
+                <!-- TOP DECORATIVE LINE -->
+                <!-- ================================================= -->
+
+                <AnchorPane
+                    prefHeight="6.0"
+                    style="-fx-background-color: #70757A;"
+                    AnchorPane.topAnchor="0.0"
+                    AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" />
+
+
+                <!-- ================================================= -->
+                <!-- DECORATIVE LEFT PANEL -->
+                <!-- ================================================= -->
+
+                <VBox
+                    alignment="CENTER"
+                    spacing="18.0"
+                    maxWidth="380.0"
+                    AnchorPane.topAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="40.0">
+
+                    <children>
+
+                        <Label
+                            text="CAR"
+                            textFill="#3F4347"
+                            alignment="CENTER">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="54.0" />
+                            </font>
+
+                        </Label>
+
+                        <Label
+                            text="RENTAL"
+                            textFill="#70757A"
+                            alignment="CENTER">
+
+                            <font>
+                                <Font
+                                    name="System Bold"
+                                    size="28.0" />
+                            </font>
+
+                        </Label>
+
+                        <Label
+                            text="MANAGEMENT SYSTEM"
+                            textFill="#555A60"
+                            alignment="CENTER">
+
+                            <font>
+                                <Font
+                                    name="System"
+                                    size="13.0" />
+                            </font>
+
+                        </Label>
+
+
+                        <!-- Decorative divider -->
+
+                        <AnchorPane
+                            prefWidth="100.0"
+                            maxWidth="100.0"
+                            prefHeight="2.0"
+                            maxHeight="2.0"
+                            style="-fx-background-color: #8A8F94;" />
+
+                        <Label
+                            text="Drive with confidence."
+                            textFill="#60656A"
+                            alignment="CENTER"
+                            wrapText="true">
+
+                            <font>
+                                <Font
+                                    name="System Italic"
+                                    size="15.0" />
+                            </font>
+                        </Label>
+
+                    </children>
+
+                </VBox>
+
+
+                <!-- ================================================= -->
+                <!-- LOGIN AREA -->
+                <!-- ================================================= -->
+
+                <StackPane
+                    AnchorPane.topAnchor="0.0"
+                    AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.leftAnchor="380.0"
+                    AnchorPane.rightAnchor="40.0">
+
+                    <children>
+
+                        <!-- ================================================= -->
+                        <!-- LOGIN CARD -->
+                        <!-- ================================================= -->
+
+                        <VBox
+                            prefWidth="420.0"
+                            maxWidth="440.0"
+                            minWidth="320.0"
+                            spacing="22.0"
+                            alignment="CENTER"
+                            style="-fx-background-color: rgba(255,255,255,0.92);
+                                   -fx-background-radius: 20;
+                                   -fx-border-color: #A6AAAE;
+                                   -fx-border-width: 1;
+                                   -fx-border-radius: 20;
+                                   -fx-padding: 42;
+                                   -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 25, 0.2, 0, 8);">
+
+                            <children>
+
+                                <!-- ================================================= -->
+                                <!-- LOGO -->
+                                <!-- ================================================= -->
+
+                                <StackPane
+                                    prefWidth="82.0"
+                                    prefHeight="82.0"
+                                    maxWidth="82.0"
+                                    maxHeight="82.0"
+                                    style="-fx-background-color: linear-gradient(to bottom right, #62676C, #AEB3B8);
+                                           -fx-background-radius: 41;
+                                           -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 12, 0.2, 0, 4);">
+
+                                    <children>
+
+                                        <Label
+                                            text="CR"
+                                            textFill="WHITE"
+                                            alignment="CENTER">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="27.0" />
+                                            </font>
+
+                                        </Label>
+
+                                    </children>
+
+                                </StackPane>
+
+
+                                <!-- ================================================= -->
+                                <!-- TITLE -->
+                                <!-- ================================================= -->
+
+                                <VBox
+                                    spacing="6.0"
+                                    alignment="CENTER">
+
+                                    <children>
+
+                                        <Label
+                                            text="Welcome Back"
+                                            textFill="#34383C"
+                                            alignment="CENTER">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="30.0" />
+                                            </font>
+
+                                        </Label>
+
+
+                                        <Label
+                                            text="Sign in to continue"
+                                            textFill="#777D83"
+                                            alignment="CENTER">
+
+                                            <font>
+                                                <Font size="14.0" />
+                                            </font>
+
+                                        </Label>
+
+                                    </children>
+
+                                </VBox>
+
+
+                                <!-- ================================================= -->
+                                <!-- LOGIN FORM -->
+                                <!-- ================================================= -->
+
+                                <GridPane
+                                    hgap="10.0"
+                                    vgap="8.0"
+                                    maxWidth="Infinity">
+
+                                    <columnConstraints>
+                                        <ColumnConstraints
+                                            percentWidth="100.0"
+                                            hgrow="ALWAYS" />
+                                    </columnConstraints>
+
+                                    <rowConstraints>
+
+                                        <RowConstraints
+                                            minHeight="25.0" />
+
+                                        <RowConstraints
+                                            minHeight="50.0" />
+
+                                        <RowConstraints
+                                            minHeight="25.0" />
+
+                                        <RowConstraints
+                                            minHeight="50.0" />
+
+                                    </rowConstraints>
+
+                                    <children>
+
+                                        <!-- USERNAME LABEL -->
+
+                                        <Label
+                                            text="USERNAME"
+                                            textFill="#555A60"
+                                            GridPane.rowIndex="0">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="12.0" />
+                                            </font>
+
+                                        </Label>
+
+
+                                        <!-- USERNAME -->
+
+                                        <TextField
+                                            fx:id="txtusername"
+                                            promptText="Enter your username"
+                                            maxWidth="Infinity"
+                                            prefHeight="50.0"
+                                            style="-fx-background-color: #F7F7F7;
+                                                   -fx-text-fill: #303438;
+                                                   -fx-prompt-text-fill: #9A9EA2;
+                                                   -fx-border-color: #C2C5C8;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 9;
+                                                   -fx-background-radius: 9;
+                                                   -fx-padding: 0 15 0 15;
+                                                   -fx-font-size: 14px;"
+                                            GridPane.rowIndex="1" />
+
+
+                                        <!-- PASSWORD LABEL -->
+
+                                        <Label
+                                            text="PASSWORD"
+                                            textFill="#555A60"
+                                            GridPane.rowIndex="2">
+
+                                            <font>
+                                                <Font
+                                                    name="System Bold"
+                                                    size="12.0" />
+                                            </font>
+
+                                        </Label>
+
+
+                                        <!-- PASSWORD -->
+
+                                        <PasswordField
+                                            fx:id="txtpassword"
+                                            promptText="Enter your password"
+                                            maxWidth="Infinity"
+                                            prefHeight="50.0"
+                                            style="-fx-background-color: #F7F7F7;
+                                                   -fx-text-fill: #303438;
+                                                   -fx-prompt-text-fill: #9A9EA2;
+                                                   -fx-border-color: #C2C5C8;
+                                                   -fx-border-width: 1;
+                                                   -fx-border-radius: 9;
+                                                   -fx-background-radius: 9;
+                                                   -fx-padding: 0 15 0 15;
+                                                   -fx-font-size: 14px;"
+                                            GridPane.rowIndex="3" />
+
+                                    </children>
+
+                                </GridPane>
+
+
+                                <!-- ================================================= -->
+                                <!-- LOGIN BUTTON -->
+                                <!-- ================================================= -->
+
+                                <Button
+                                    fx:id="btnLogin"
+                                    mnemonicParsing="false"
+                                    onAction="#handleLogin"
+                                    text="SIGN IN"
+                                    maxWidth="Infinity"
+                                    prefHeight="52.0"
+                                    style="-fx-background-color: linear-gradient(to right, #4D5358, #777D82);
+                                           -fx-text-fill: white;
+                                           -fx-background-radius: 9;
+                                           -fx-font-size: 15px;
+                                           -fx-font-weight: bold;
+                                           -fx-cursor: hand;
+                                           -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 8, 0.1, 0, 3);">
+
+                                    <font>
+                                        <Font
+                                            name="System Bold"
+                                            size="15.0" />
+                                    </font>
+
+                                </Button>
+
+
+                                <!-- ================================================= -->
+                                <!-- FOOTER -->
+                                <!-- ================================================= -->
+
+                                <VBox
+                                    spacing="5.0"
+                                    alignment="CENTER">
+
+                                    <children>
+
+                                        <Label
+                                            text="Car Rental Management System"
+                                            textFill="#858A8F"
+                                            alignment="CENTER">
+
+                                            <font>
+                                                <Font size="12.0" />
+                                            </font>
+
+                                        </Label>
+
+                                        <Label
+                                            text="© 2026"
+                                            textFill="#A0A4A8"
+                                            alignment="CENTER">
+
+                                            <font>
+                                                <Font size="11.0" />
+                                            </font>
+
+                                        </Label>
+
+                                    </children>
+
+                                </VBox>
+
+                            </children>
+
+                        </VBox>
+
+                    </children>
+
+                </StackPane>
+
+            </children>
+
+        </AnchorPane>
+
+    </children>
+
+</AnchorPane>

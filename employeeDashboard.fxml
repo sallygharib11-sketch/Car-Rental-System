@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.employeeDashboardController">
+
+    <!-- ========================= -->
+    <!-- TOP NAVIGATION -->
+    <!-- ========================= -->
+
+    <top>
+        <VBox spacing="10.0" style="-fx-background-color: #111111;                      -fx-padding: 15 30 15 30;">
+
+            <HBox alignment="CENTER_LEFT" spacing="20.0">
+
+                <children>
+
+                    <Label style="-fx-font-size: 26px;                                   -fx-font-weight: bold;" text="Car Rental System" textFill="SILVER" />
+
+                    <VBox HBox.hgrow="ALWAYS" />
+
+                    <MenuButton fx:id="btnDashboard" text="Dashboard">
+
+                        <items>
+
+                            <MenuItem onAction="#openCustomers" text="Customers" />
+
+                            <MenuItem onAction="#openCars" text="Cars" />
+
+                            <MenuItem onAction="#openRentals" text="Rentals" />
+
+                            <MenuItem onAction="#openPayments" text="Payments" />
+
+                        </items>
+
+                    </MenuButton>
+
+                    <Button fx:id="btnLogout" onAction="#logout" style="-fx-background-color: #D32F2F;                                    -fx-text-fill: white;                                    -fx-font-weight: bold;" text="Logout" />
+
+                </children>
+
+            </HBox>
+
+        </VBox>
+    </top>
+
+
+    <!-- ========================= -->
+    <!-- CENTER -->
+    <!-- ========================= -->
+
+    <center>
+
+        <VBox spacing="25.0" style="-fx-background-color: black;                      -fx-padding: 35;">
+
+            <Label style="-fx-font-size: 32px;                           -fx-font-weight: bold;" text="Employee Dashboard" textFill="SILVER" />
+
+            <Label style="-fx-font-size: 16px;" text="Manage daily car rental operations" textFill="GRAY" />
+
+
+            <!-- ========================= -->
+            <!-- DASHBOARD CARDS -->
+            <!-- ========================= -->
+
+            <GridPane hgap="20.0" vgap="20.0" VBox.vgrow="ALWAYS">
+
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50.0" />
+                    <ColumnConstraints percentWidth="50.0" />
+                </columnConstraints>
+
+                <rowConstraints>
+                    <RowConstraints percentHeight="50.0" />
+                    <RowConstraints percentHeight="50.0" />
+                </rowConstraints>
+
+
+                <!-- CUSTOMERS -->
+
+                <Button fx:id="btnCustomers" onAction="#openCustomers" maxHeight="Infinity" maxWidth="Infinity" style="-fx-font-size: 18px;                                -fx-font-weight: bold;                                -fx-background-color: #2E7D32;                                -fx-text-fill: white;" text="CUSTOMERS&#10;&#10;Manage Customers" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+
+                <!-- CARS -->
+
+                <Button fx:id="btnCars" onAction="#openCars" maxHeight="Infinity" maxWidth="Infinity" style="-fx-font-size: 18px;                                -fx-font-weight: bold;                                -fx-background-color: #1565C0;                                -fx-text-fill: white;" text="CARS&#10;&#10;View Available Vehicles" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+
+                <!-- RENTALS -->
+
+                <Button fx:id="btnRentals" onAction="#openRentals" maxHeight="Infinity" maxWidth="Infinity" style="-fx-font-size: 18px;                                -fx-font-weight: bold;                                -fx-background-color: #EF6C00;                                -fx-text-fill: white;" text="RENTALS&#10;&#10;Manage Rentals" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+
+                <!-- PAYMENTS -->
+
+                <Button fx:id="btnPayments" onAction="#openPayments" maxHeight="Infinity" maxWidth="Infinity" style="-fx-font-size: 18px;                                -fx-font-weight: bold;                                -fx-background-color: #00838F;                                -fx-text-fill: white;" text="PAYMENTS&#10;&#10;Manage Payments" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            </GridPane>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
